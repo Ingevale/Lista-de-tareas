@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="list roundBorder">
+        <div class="container">
+            <h1>Lista de tareas</h1>
+        </div>
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+        <form id="taskForm">
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            <input type="text" name="taskDescription" placeholder="Descripción" class="roundBorder">
+            <input type="text" name="taskDate" placeholder="Fecha" class="roundBorder" data-input>
+            <button type="submit" class="addTaskButton">+</button>
+        </form>
+        <h5>Estas son tus tareas pendientes</h5>
+        <div id="tasksContainer"></div>
+    </div>
+
+    <template id="taskTemplate">
+        <div class="task roundBorder">
+            <div class="task-content">
+                <span class="task-text"></span>
+                <span class="task-description"></span>
+                <span class="task-date"></span>
+            </div>
+            <div class="task-icons">
+                <i class="fas fa-edit edit-icon"></i>
+                <i class="fas fa-trash-alt delete-icon"></i>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <script src="script.js" type="text/javascript" defer></script>
+</body>
+</html>
